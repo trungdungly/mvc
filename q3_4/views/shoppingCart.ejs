@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <h1>Shopping Cart</h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        <% let total=0; %>
+            <% products.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>$<%= product.price %>
+                    </td>
+                    <td>
+                        <%= product.quantity %>
+                    </td>
+                    <td>$<%= product.price * product.quantity %>
+                    </td>
+                </tr>
+                <% total +=product.price * product.quantity %>
+                    <% }); %>
+                        <tr>
+                            <td colspan="3">Total:</td>
+                            <td>$<%= total %>
+                            </td>
+                        </tr>
+    </table>
+    <a href="/">Back
